@@ -116,7 +116,14 @@ export type onAutocompleteResultClickHook = (resultParams: any) => void;
 export type SearchDriverOptions = {
   apiConnector: APIConnector;
   autocompleteQuery?: AutocompleteQueryConfig;
-  debug?: boolean;
+  
+  
+  
+  
+  
+  
+  
+  ?: boolean;
   initialState?: Partial<RequestState>;
   onSearch?: onSearchHook;
   onAutocomplete?: onAutocompleteHook;
@@ -508,7 +515,7 @@ class SearchDriver {
   private _setState(newState: Partial<SearchState>) {
     const state = { ...this.state, ...newState } as SearchState;
     // eslint-disable-next-line no-console
-    if (this.debug) console.log("Search UI: State Update", newState, state);
+    //if (this.debug) console.log("Search UI: State Update", newState, state);
     this.state = state;
     this.subscriptions.forEach((subscription) => subscription(state));
   }
